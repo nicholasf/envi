@@ -1,5 +1,5 @@
 {
-  "name": "environ",
+  "name": "envi",
   "version": "0.0.0",
   "description": "sets up nconf managed environment data",
   "main": "index.js",
