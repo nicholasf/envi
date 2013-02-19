@@ -6,7 +6,7 @@ npm install -g envi
 ## Usage
 
 ```
-☁  bin [master] ⚡ ./envi 
+☁  bin [master] ⚡ envi 
 Created your conf directory with env.js and env.json!
 Install latest version of nconf? y or n [y]
 ```
