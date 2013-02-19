@@ -25,7 +25,7 @@ conf/env.json
 So you can do this in your code:
 
 ```
-env = require('./config/env');
+env = require('./conf/env');
 console.log(env.hello); //outputs I'm dev by default, otherwise reads process.env.NODE_ENV
 ```
 
