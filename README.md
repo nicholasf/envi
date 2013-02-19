@@ -13,7 +13,7 @@ Install latest version of nconf? y or n [y]
 
 ## Explanation
 
-You need configuration vars that are enviromentally specific. You also want them to use nconf goodness (https://github.com/flatiron/nconf).
+You need configuration vars that are enviromentally specific. You also want them to use nconf goodness (https://github.com/flatiron/nconf). You want the environment to default to being development if process.env.NODE_ENV is undefined.
 
 Running envi will give you a conf directory that looks like this:
 
