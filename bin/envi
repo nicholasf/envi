@@ -10,6 +10,8 @@ fs.mkdirSync('conf');
 fs.createReadStream(fileBase + '/env.json').pipe(fs.createWriteStream('conf/env.json'));
 fs.createReadStream(fileBase + '/env.js').pipe(fs.createWriteStream('conf/env.js'));
 
+console.log("Created your conf directory with env.js and env.json!");
+
 var closingMessage = function(){
   console.log("Complete. Now just use \n\tvar env = require('./conf/env'); \nin your main file.");
   process.exit(0);

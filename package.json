@@ -1,6 +1,6 @@
 {
   "name": "envi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "an nconf wrapper around conf/env.js & env.json",
   "main": "bin/envi.js",
   "repository": "git@github.com:nicholasf/envi.git",
