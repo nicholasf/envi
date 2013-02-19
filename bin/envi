@@ -10,6 +10,11 @@ fs.mkdirSync('conf');
 fs.createReadStream(fileBase + '/env.json').pipe(fs.createWriteStream('conf/env.json'));
 fs.createReadStream(fileBase + '/env.js').pipe(fs.createWriteStream('conf/env.js'));
 
+var closingMessage = function(){
+  console.log("Complete. Now just use \n\tvar env = require('./conf/env'); \nin your main file.");
+  process.exit(0);
+}
+
 program.prompt('Install latest version of nconf? y or n [y] ', function(choice){
   if (choice.toLowerCase() === "y"){
     console.log("Running npm install nconf -save ...")  
@@ -23,10 +28,10 @@ program.prompt('Install latest version of nconf? y or n [y] ', function(choice){
       process.stdout.write(data.toString());
     });
 
-    installer.on('exit', function(){ console.log("Complete.")});
+    installer.on('exit', closingMessage);
   }
   else {
-    console.log("Done.");
+    closingMessage()
   }
 })
 
