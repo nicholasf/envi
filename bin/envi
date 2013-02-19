@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-var fs = require('fs')
-  , path = require('path');
+var fs = require('fs');
+
+var fileBase = __dirname + "/../conf";
 
 fs.mkdirSync('conf');
-fs.createReadStream('./../conf/env.json').pipe(fs.createWriteStream('conf/env.json'));
-fs.createReadStream('./../conf/env.js').pipe(fs.createWriteStream('conf/env.js'));
+fs.createReadStream(fileBase + '/env.json').pipe(fs.createWriteStream('conf/env.json'));
+fs.createReadStream(fileBase + '/env.js').pipe(fs.createWriteStream('conf/env.js'));
 
-console.log(path.dirname('./../config'), " <<<")
 console.log("Done. Now run 'npm install nconf -save");
