@@ -8,6 +8,7 @@
   "bin": {
     "envi": "./bin/envi"
   },
+  "keywords": ["environment", "config", "nconf", "json"],
   "license": "BSD",
   "dependencies": {
     "commander": "~1.1.1"
