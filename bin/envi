@@ -4,8 +4,8 @@ var fs = require('fs')
   , path = require('path');
 
 fs.mkdirSync('conf');
-fs.createReadStream('./../config/env.json').pipe(fs.createWriteStream('conf/env.json'));
-fs.createReadStream('./../config/env.js').pipe(fs.createWriteStream('conf/env.js'));
+fs.createReadStream('./../conf/env.json').pipe(fs.createWriteStream('conf/env.json'));
+fs.createReadStream('./../conf/env.js').pipe(fs.createWriteStream('conf/env.js'));
 
 console.log(__dirname)
 
