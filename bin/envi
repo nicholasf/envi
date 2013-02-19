@@ -12,15 +12,15 @@ fs.createReadStream(fileBase + '/env.js').pipe(fs.createWriteStream('conf/env.js
 
 program.prompt('Install latest version of nconf? y or n [y] ', function(choice){
   if (choice.toLowerCase() === "y"){
-    console.log("now you should somehow install nconf")  
+    console.log("Running npm install nconf -save ...")  
     installer = spawn('npm', ['install', 'nconf', '-save']);
 
     installer.stdout.on('data', function(data){ 
-      console.log(data.toString());
+      process.stdout.write(data.toString());
     });
 
     installer.stderr.on('data', function(data){ 
-      console.log(data.toString());
+      process.stdout.write(data.toString());
     });
 
     installer.on('exit', function(){ console.log("Complete.")});
