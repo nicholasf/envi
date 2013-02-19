@@ -1,9 +1,12 @@
 {
   "name": "envi",
   "version": "0.0.1",
-  "description": "sets up nconf managed environment data",
+  "description": "an nconf wrapper around conf/env.js & env.json",
   "main": "bin/envi.js",
   "repository": "git@github.com:nicholasf/envi.git",
-  "author": "nicholasf",
+  "author": "Nicholas Faiz",
+  "bin": {
+    "envi": "./bin/envi"
+  },
   "license": "BSD"
 }
