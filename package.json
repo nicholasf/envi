@@ -1,0 +1,12 @@
+{
+  "name": "environ",
+  "version": "0.0.0",
+  "description": "sets up nconf managed environment data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "nicholasf",
+  "license": "BSD"
+}
