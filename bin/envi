@@ -8,4 +8,4 @@ fs.mkdirSync('conf');
 fs.createReadStream(fileBase + '/env.json').pipe(fs.createWriteStream('conf/env.json'));
 fs.createReadStream(fileBase + '/env.js').pipe(fs.createWriteStream('conf/env.js'));
 
-console.log("Done. Now run 'npm install nconf -save");
+console.log("Done. Now run 'npm install nconf -save'");

@@ -1,4 +1,21 @@
-Because you need configuration vars that are enviromentally specific. You also want them to use nconf goodness (https://github.com/flatiron/nconf).
+## Installation
+```
+npm install -g envi
+```
+
+## Usage
+
+```
+envi
+
+Done. Now run 'npm install nconf -save'
+```
+
+## Explanation
+
+You need configuration vars that are enviromentally specific. You also want them to use nconf goodness (https://github.com/flatiron/nconf).
+
+Running envi will give you a conf directory that looks like this:
 
 ```
 conf/env.js
