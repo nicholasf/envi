@@ -18,6 +18,10 @@ var closingMessage = function(){
 }
 
 program.prompt('Install latest version of nconf? y or n [y] ', function(choice){
+  if (typeof choice === 'undefined'){
+    choice = "y";
+  };
+
   if (choice.toLowerCase() === "y"){
     console.log("Running npm install nconf -save ...")  
     installer = spawn('npm', ['install', 'nconf', '-save']);
