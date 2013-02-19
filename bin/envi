@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
-var fs = require('fs');
+var fs = require('fs')
+  , program = require('commander')
+  , spawn = require('child_process').spawn;
 
 var fileBase = __dirname + "/../conf";
 
@@ -8,4 +10,23 @@ fs.mkdirSync('conf');
 fs.createReadStream(fileBase + '/env.json').pipe(fs.createWriteStream('conf/env.json'));
 fs.createReadStream(fileBase + '/env.js').pipe(fs.createWriteStream('conf/env.js'));
 
-console.log("Done. Now run 'npm install nconf -save'");
+program.prompt('Install latest version of nconf? y or n [y] ', function(choice){
+  if (choice.toLowerCase() === "y"){
+    console.log("now you should somehow install nconf")  
+    installer = spawn('npm', ['install', 'nconf', '-save']);
+
+    installer.stdout.on('data', function(data){ 
+      console.log(data.toString());
+    });
+
+    installer.stderr.on('data', function(data){ 
+      console.log(data.toString());
+    });
+
+    installer.on('exit', function(){ console.log("Complete.")});
+  }
+  else {
+    console.log("Done.");
+  }
+})
+
