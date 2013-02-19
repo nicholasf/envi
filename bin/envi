@@ -37,7 +37,7 @@ program.prompt('Install latest version of nconf? y or n [y] ', function(choice){
     installer.on('exit', closingMessage);
   }
   else {
-    closingMessage()
+    closingMessage();
   }
 })
 
