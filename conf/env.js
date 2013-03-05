@@ -1,23 +1,24 @@
-var env, 
-  , nconf = require('nconf');
+var nconf = require('nconf'),
+    path = require('path');
 
 nconf.argv().env().file({
-  file: 'config/env.json'
+    file: path.join('config', 'env.json')
 });
 
 var overridingConfig = nconf.get('defaults');
 
-if (overridingConfig != null) {
-  nconf.file(overridingConfig);
-  console.log('Found a config file to override anything in config/default.json');
+if (overridingConfig !== undefined) {
+    nconf.file(overridingConfig);
+    console.log('Found a config file to override anything in config/default.json');
 }
 
-env = process.env.NODE_ENV || 'development';
-envConf = nconf.get(env);
+var env = process.env.NODE_ENV || 'development',
+    envConf = nconf.get(env);
 
-for (k in envConf) {
-  v = envConf[k];
-  exports[k] = v;
+for (var key in envConf) {
+    if (envConf.hasOwnProperty(key)) {
+        exports[key] = envConf[key];
+    }
 }
 
 exports.config = env;
