@@ -9,7 +9,7 @@ var overridingConfig = nconf.get('defaults');
 
 if (overridingConfig !== undefined) {
     nconf.file(overridingConfig);
-    console.log('Found a config file to override anything in config/default.json');
+    console.log('Found a config file to override anything in conf/env.json');
 }
 
 var env = process.env.NODE_ENV || 'development',
