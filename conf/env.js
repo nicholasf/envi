@@ -2,7 +2,7 @@ var nconf = require('nconf')
     , path = require('path');
 
 nconf.argv().env().file({
-    file: path.join('config', 'env.json')
+    file: path.join('conf', 'env.json')
 });
 
 var overridingConfig = nconf.get('defaults');
